@@ -5,6 +5,7 @@ import PointToPointForm from "../components/HomeComponents/PointToPointForm";
 import TransferForm from "../components/HomeComponents/TransferForm";
 import OutstationForm from "../components/HomeComponents/OutstationForm";
 import PopularFleet from "../components/HomeComponents/PopularFleet";
+import { height } from "@mui/system";
 
 // import {getAllcityList} from '../services/city/index';
 
@@ -23,18 +24,18 @@ const Home = () => {
         <div className="container">
           <div className="home-banner">
             <div className="row align-items-center">
-              <div className="col-lg-6" >
+              {/* <div className="col-lg-6" >
                 <p className="explore-text"> <span><i className="fa-solid fa-thumbs-up me-2"></i></span>100% Trusted Cab Booking platform in Bihar</p>
                 <h1>Find Your Best Cab <br />
                   <span>for Booking</span></h1>
                   <p style={{'font-size':'18px', 'color':'blue'}}>Call At : 8294202824 , 6205198331</p>
-                  {/* <span className="whatsapp-m"> <a target="_blank" href="https://api.whatsapp.com/send?phone=8294202824"> <img src="assets/img/icons8-whatsapp-48.png" className="img-fluid" alt="Logo" /> </a></span>
-                  <span className="call-m"> <a target="_blank" href="tel:6205198331"> <img src="assets/img/icons8-telephone-64.png" className="img-fluid" alt="Logo" /> </a></span> */}
+                   <span className="whatsapp-m"> <a target="_blank" href="https://api.whatsapp.com/send?phone=8294202824"> <img src="assets/img/icons8-whatsapp-48.png" className="img-fluid" alt="Logo" /> </a></span>
+                  <span className="call-m"> <a target="_blank" href="tel:6205198331"> <img src="assets/img/icons8-telephone-64.png" className="img-fluid" alt="Logo" /> </a></span> 
 
-              </div>
-              <div className="col-lg-6">
+              </div> */}
+              <div className="col-lg-6 height350">
                 <div className="banner-imgs">
-                  <img src="assets/img/car-right.png" className="img-fluid aos" alt="bannerimage" />
+                  {/* <img src="assets/img/car-right.png" className="img-fluid aos" alt="bannerimage" /> */}
                 </div>
               </div>
             </div>
@@ -176,19 +177,21 @@ const Home = () => {
 
           <div className="section-heading" >
             <h2 className="title text-white">Facts By The Numbers</h2>
-            <p className="description text-white">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+            {/* <p className="description text-white">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p> */}
           </div>
 
           <div className="counter-group">
             <div className="row">
               <div className="col-lg-3 col-md-6 col-12 d-flex" >
                 <div className="count-group flex-fill">
-                  <div className="customer-count d-flex align-items-center">
+                  <div className="customer-count align-items-center w-100">
+                    <div>
                     <div className="count-img">
                       <img src="assets/img/icons/bx-heart.svg" alt />
                     </div>
+                    </div>
                     <div className="count-content">
-                      <h4><span className="counterUp">1</span>K+</h4>
+                      <h4><span className="counterUp">2</span>K+</h4>
                       <p>Happy Customers</p>
                     </div>
                   </div>
@@ -196,12 +199,12 @@ const Home = () => {
               </div>
               <div className="col-lg-3 col-md-6 col-12 d-flex" >
                 <div className="count-group flex-fill">
-                  <div className="customer-count d-flex align-items-center">
+                  <div className="customer-count align-items-center w-100">
                     <div className="count-img">
                       <img src="assets/img/icons/bx-car.svg" alt />
                     </div>
                     <div className="count-content">
-                      <h4><span className="counterUp">100</span>+</h4>
+                      <h4><span className="counterUp">30</span>+</h4>
                       <p>Count of Cars</p>
                     </div>
                   </div>
@@ -209,9 +212,11 @@ const Home = () => {
               </div>
               <div className="col-lg-3 col-md-6 col-12 d-flex" >
                 <div className="count-group flex-fill">
-                  <div className="customer-count d-flex align-items-center">
+                  <div className="customer-count align-items-center w-100">
+                  <div>
                     <div className="count-img">
                       <img src="assets/img/icons/bx-headphone.svg" alt />
+                    </div>
                     </div>
                     <div className="count-content">
                       <h4><span className="counterUp">10</span>+</h4>
@@ -222,12 +227,14 @@ const Home = () => {
               </div>
               <div className="col-lg-3 col-md-6 col-12 d-flex" >
                 <div className="count-group flex-fill">
-                  <div className="customer-count d-flex align-items-center">
+                  <div className="customer-count align-items-center w-100">
+                    <div>
                     <div className="count-img">
                       <img src="assets/img/icons/bx-history.svg" alt />
                     </div>
+                    </div>
                     <div className="count-content">
-                      <h4><span className="counterUp">200</span>K+</h4>
+                      <h4><span className="counterUp">500</span>K+</h4>
                       <p>Total Kilometer</p>
                     </div>
                   </div>
@@ -246,7 +253,7 @@ const Home = () => {
 
           <div className="section-heading" >
             <h2>Our Popular Fleets</h2>
-            <p>Triloki Cabs leading Taxi Service Provider in Bihar for Sedan, SUV, and Corporate Fleets</p>
+            <p>Fast Fleet Cabs leading Taxi Service Provider in Delhi NCR for Sedan, SUV, and Hatchback Fleets</p>
           </div>
 <PopularFleet />
         </div>
@@ -286,7 +293,7 @@ const Home = () => {
                       <img src="assets/img/icons/bx-user-check.svg" alt />
                     </div>
                     <div className="choose-content">
-                      <h4>Many Pickup Location</h4>
+                      <h4>100% Secure Payments</h4>
 
                     </div>
                   </div>
@@ -299,7 +306,7 @@ const Home = () => {
                       <img src="assets/img/icons/bx-user-check.svg" alt />
                     </div>
                     <div className="choose-content">
-                      <h4>Customer Satisfaction</h4>
+                      <h4>24X7 Support</h4>
 
                     </div>
                   </div>
@@ -311,7 +318,7 @@ const Home = () => {
       </section>
 
 
-      <section className="section about-testimonial testimonials-section">
+      {/* <section className="section about-testimonial testimonials-section">
         <div className="container">
 
           <div className="section-heading" >
@@ -472,23 +479,23 @@ const Home = () => {
 
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="section faq-section bg-light-primary">
         <div className="container">
 
           <div className="section-heading" >
             <h2>Frequently Asked Questions </h2>
-            <p>About Triloki Cabs Patna</p>
+            <p>About Fast Fleet Cabs Delhi NCR</p>
           </div>
 
           <div className="faq-info">
             <div className="faq-card bg-white" >
               <h4 className="">
-                <a className="collapsed" >How many types of cabs are available in Patna?</a>
+                <a className="collapsed" >How many types of cabs are available in Delhi NCR?</a>
               </h4>
               <div className="">
-                <p>There are around 3 (SEDAN, SUV, HATCHBACK etc.) types of cabs available in Patna. </p>
+                <p>There are around 3 (SEDAN, SUV, HATCHBACK etc.) types of cabs available in Delhi NCR. </p>
               </div>
             </div>
             <div className="faq-card bg-white" >
@@ -496,12 +503,12 @@ const Home = () => {
                 <a >In which areas do you operate?</a>
               </h4>
               <div>
-                <p>Triloki Cabs oprate cabs in all over India. </p>
+                <p>Fast Fleet Cabs oprate cabs in Delhi NRC. </p>
               </div>
             </div>
             <div className="faq-card bg-white" >
               <h4 className="">
-                <a>Do I need to carry any ID proof to avail cab services on Triloki Caabs?</a>
+                <a>Do I need to carry any ID proof to avail cab services on Fast Fleet Cabs?</a>
               </h4>
               <div>
                 <p>Yes, you need to carry a photo ID proof to help the driver identify you at the time of check-in.</p>

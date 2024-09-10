@@ -16,7 +16,7 @@ return (
                     <div className="listing-content">
                       <div className="listing-features">
                         <div className="fav-item-rental">
-                          <span className="featured-text"><i className="fa fa-inr"></i>19 / Per KM</span>
+                          <span className="featured-text"><i className="fa fa-inr"></i>16 / Per KM</span>
                         </div>
                         {/* <!--
 <div className="list-rating">
@@ -28,15 +28,18 @@ return (
 <span>(5.0)</span>
 </div>--> */}
                         <h3 className="listing-title">
-                          <a href="#">Crysta/Inova</a>
+                          <a href="#">SUV</a>
                         </h3>
-                        <h6>(Minimum 200km)</h6>
+                        <h6>(Per Day Limit 250km)</h6>
+                        Extra Charge - Driver Night Charge (Rs.300/day)
+                        (after 10:00 PM-6:00 AM)
+                        Toll Tax, Parking, State Tax
                       </div>
                       <div className="listing-details-group Center text-center">
-                        From: Patna
+                        From: Delhi NCR
                       </div>
                       <div className="listing-button">
-                        {/* <a href="listing-details.html" className="btn btn-order"><span><i className="feather-calendar me-2"></i></span>Book Now</a> */}
+                        <a href="#" className="btn btn-order"><span><i className="feather-calendar me-2"></i></span>Book Now</a>
                       </div>
                     </div>
                   </div>
@@ -53,7 +56,7 @@ return (
                     <div className="listing-content">
                       <div className="listing-features">
                         <div className="fav-item-rental">
-                          <span className="featured-text"><i className="fa fa-inr"></i>12 / Per KM</span>
+                          <span className="featured-text"><i className="fa fa-inr"></i>13 / Per KM</span>
                         </div>
                         {/* <!--
 <div className="list-rating">
@@ -65,15 +68,18 @@ return (
 <span>(5.0)</span>
 </div>--> */}
                         <h3 className="listing-title">
-                          <a href="listing-details.html">SEDAN (4+1)</a>
+                          <a href="listing-details.html">SEDAN</a>
                         </h3>
-                        <h6>(Dzire, Etios Or Similar)</h6>
+                        <h6>(Per Day Limit 250KM)</h6>
+                        Extra Charge - Driver Night Charge (Rs.300/day)
+                        (after 10:00 PM-6:00 AM)
+                        Toll Tax, Parking, State Tax
                       </div>
                       <div className="listing-details-group Center text-center">
-                        From: Patna
+                        From: Delhi NCR
                       </div>
                       <div className="listing-button">
-                        {/* <a href="listing-details.html" className="btn btn-order"><span><i className="feather-calendar me-2"></i></span>Book Now</a> */}
+                        <a href="#" className="btn btn-order"><span><i className="feather-calendar me-2"></i></span>Book Now</a>
                       </div>
                     </div>
                   </div>
@@ -89,7 +95,7 @@ return (
                     <div className="listing-content">
                       <div className="listing-features">
                         <div className="fav-item-rental">
-                          <span className="featured-text"><i className="fa fa-inr"></i>17 / Per KM</span>
+                          <span className="featured-text"><i className="fa fa-inr"></i>11 / Per KM</span>
                         </div>
                         {/* <!--
 <div className="list-rating">
@@ -101,94 +107,23 @@ return (
 <span>(5.0)</span>
 </div>--> */}
                         <h3 className="listing-title">
-                          <a href="listing-details.html">Inova</a>
+                          <a href="listing-details.html">Hatchback</a>
                         </h3>
-                        <h6>(Or Similar)</h6>
+                        <h6>(Per Day Limit 250KM)</h6>
+                        Extra Charge - Driver Night Charge (Rs.300/day)
+                        (after 10:00 PM-6:00 AM)
+                        Toll Tax, Parking, State Tax
                       </div>
                       <div className="listing-details-group Center text-center">
-                        From: Patna
+                        From: Delhi NCR
                       </div>
                       <div className="listing-button">
-                        {/* <a href="listing-details.html" className="btn btn-order"><span><i className="feather-calendar me-2"></i></span>Book Now</a> */}
+                        <a href="#" className="btn btn-order"><span><i className="feather-calendar me-2"></i></span>Book Now</a>
                       </div>
                     </div>
                   </div>
                 </div>
 
-
-                <div className="rental-car-item col-sm-4 mt-2">
-                  <div className="listing-item mb-0">
-                    <div className="listing-img">
-                      <a href="#">
-                        <img src="assets/img/cars/Scorpio.png" className="img-fluid" alt="Scorpio-Ertiga" />
-                      </a>
-                    </div>
-                    <div className="listing-content">
-                      <div className="listing-features">
-                        <div className="fav-item-rental">
-                          <span className="featured-text"><i className="fa fa-inr"></i>15 / Per KM</span>
-                        </div>
-                        {/* <!--
-                          <div className="list-rating">
-                          <i className="fas fa-star filled"></i>
-                          <i className="fas fa-star filled"></i>
-                          <i className="fas fa-star filled"></i>
-                          <i className="fas fa-star filled"></i>
-                          <i className="fas fa-star filled"></i>
-                          <span>(5.0)</span>
-                          </div>--> */}
-                        <h3 className="listing-title">
-                          <a href="#">Scorpio/Ertiga</a>
-                        </h3>
-                        <h6>(Or Similar)</h6>
-                      </div>
-                      <div className="listing-details-group Center text-center">
-                        From: Patna
-                      </div>
-                      <div className="listing-button">
-                        {/* <a href="listing-details.html" className="btn btn-order"><span><i className="feather-calendar me-2"></i></span>Book Now</a> */}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-
-
-                <div className="rental-car-item col-sm-4 mt-2">
-                  <div className="listing-item mb-0">
-                    <div className="listing-img">
-                      <a href="#">
-                        <img src="assets/img/cars/tampu-traveler.png" className="img-fluid" alt="Tempu-Travels" />
-                      </a>
-                    </div>
-                    <div className="listing-content">
-                      <div className="listing-features">
-                        <div className="fav-item-rental">
-                          <span className="featured-text"><i className="fa fa-inr"></i>36 / Per KM</span>
-                        </div>
-                        {/* <!--
-<div className="list-rating">
-<i className="fas fa-star filled"></i>
-<i className="fas fa-star filled"></i>
-<i className="fas fa-star filled"></i>
-<i className="fas fa-star filled"></i>
-<i className="fas fa-star filled"></i>
-<span>(5.0)</span>
-</div>--> */}
-                        <h3 className="listing-title">
-                          <a href="#">Tempu / Travels</a>
-                        </h3>
-                        <h6>(Minimum 250km)</h6>
-                      </div>
-                      <div className="listing-details-group Center text-center">
-                        From: Patna
-                      </div>
-                      <div className="listing-button">
-                        {/* <a href="listing-details.html" className="btn btn-order"><span><i className="feather-calendar me-2"></i></span>Book Now</a> */}
-                      </div>
-                    </div>
-                  </div>
-                </div>
 				</div>
 
 	

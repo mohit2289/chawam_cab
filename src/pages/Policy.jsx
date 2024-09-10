@@ -28,17 +28,17 @@ const Policy = () => {
                                     <h3>Privacy & Policy</h3>
                                 </div>
                                 
-                                <div>Triloki Cabs is committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which you can be identified when using this website, and then you can be assured that it will only be used in accordance with this privacy statement.</div>
-                                <br/><div>This privacy policy assures that the user information give to Triloki Cabs will be protected while using Triloki Cabs website.</div>
-                                <br/><div>Triloki Cabs may change this policy from time to time by updating this page. You should check this page from time to time to ensure that you are happy with any changes. This policy is effective from 24th February 2016</div>
-                                <br/><h5>What Triloki Cabs collect:</h5>
+                                <div>Fast Fleet Cabs is committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which you can be identified when using this website, and then you can be assured that it will only be used in accordance with this privacy statement.</div>
+                                <br/><div>This privacy policy assures that the user information give to Fast Fleet Cabs will be protected while using Fast Fleet Cabs website.</div>
+                                <br/><div>Fast Fleet Cabs may change this policy from time to time by updating this page. You should check this page from time to time to ensure that you are happy with any changes. This policy is effective from 24th February 2016</div>
+                                <br/><h5>What Fast Fleet Cabs collect:</h5>
                                 <ul>
                                     <li>We may collect the following information-</li>
                                     <li>Name and Details of your Tours.</li>
                                     <li>Contact information including email address, Mobile No.</li>
                                     <li>Demographic information such as postcode, preferences and interests.</li>
                                     <li>Other information relevant to customer surveys and/or offers.</li>
-                                    <li>What Triloki Cabs do with the information we gather.</li>
+                                    <li>What Fast Fleet Cabs do with the information we gather.</li>
                                     <li>We require this information to understand your needs and provide you with a better service, and in particular for the following reasons: Internal record keeping.</li>
                                     <li>We may use the information to improve our products and services and retain the good relationship with our users.</li>
                                 </ul>
@@ -46,7 +46,7 @@ const Policy = () => {
 This includes details of the purposes for which we use personal or individual information and also the diverse legal grounds upon which we process that information. We use personal information to provide and improve Services and for other purposes that are in our legitimate interests, as well as for compliance purposes. Such as content of communications, suggestions, queries, comments, response, and other information you send to us, that you provide to us when you contact us, or that you post on our services (including information in alerts, folders, notes, and shares of content), and similar data.
 <br/><br/>
 <h5>End-to End Communication </h5>
-Your preferences about how trilokicabs.com your information are important to us and, when possible, we aim to honor them. Depending on where you reside, we offer the following choices that you can exercise with regard to your Personal Data. If you have any questions about this privacy policy, you may contact us admin@Triloki Cabs.com
+Your preferences about how trilokicabs.com your information are important to us and, when possible, we aim to honor them. Depending on where you reside, we offer the following choices that you can exercise with regard to your Personal Data. If you have any questions about this privacy policy, you may contact us admin@Fast Fleet Cabs.com
 <br/><br/>
 <h5>Information Collection from Application </h5>
 trilokicabs.com collects personal data directly from you and from other sources as described below. The categories of personal data collected directly from you by us include all of the categories identified. We collect personal data directly from you when you interact with us through our app, including, without limitation, when you:<br/>
@@ -66,9 +66,9 @@ We may collect contact information through other sources, such as list vendors, 
 
 trilokicabs.com  can share personal information with our business partners and third party service providers, the person providing for your access to our Services (if that is not you) and in accordance with law. Our third-party service providers are not permitted to share or use personal information we make available to them for any purpose other than to provide services to us.
 <br/><br/>
-trilokicabs.com may share personal data to service providers and business partners in order to support our business needs, such as fulfilling your orders, following up on requirements, providing support and assisting Triloki Cabs.com with sales, marketing and communication initiatives. These service or business partners include distributors, resellers, payment processors and companies, postal or government authorities, market intelligence and consulting service providers.
+trilokicabs.com may share personal data to service providers and business partners in order to support our business needs, such as fulfilling your orders, following up on requirements, providing support and assisting Fast Fleet Cabs.com with sales, marketing and communication initiatives. These service or business partners include distributors, resellers, payment processors and companies, postal or government authorities, market intelligence and consulting service providers.
 <br/><br/>
-Business or service partners are required by contract to keep your personal information received on behalf of Triloki Cabs.com secure and not use it for any purpose other than the purpose for which it was offered to them.
+Business or service partners are required by contract to keep your personal information received on behalf of Fast Fleet Cabs.com secure and not use it for any purpose other than the purpose for which it was offered to them.
 <br/><br/><h5>
 Sensitive Personal Info 
 </h5>
@@ -80,12 +80,12 @@ We collect personal information automatically when you:<br/>
 <br/><br/>
 <h5>Read previous policy archive</h5>
 
-We may do changes to this privacy policy anytime. trilokicabs.com updated this page with updated changes to this privacy policy time to time. Please visit this privacy policy regularly to read the current version. If there are material changes to how we use your personal information, we will endeavor to provide you with reasonable notice of such changes, either by prominent notice on www.Triloki Cabs.com or to your email address of record.
+We may do changes to this privacy policy anytime. trilokicabs.com updated this page with updated changes to this privacy policy time to time. Please visit this privacy policy regularly to read the current version. If there are material changes to how we use your personal information, we will endeavor to provide you with reasonable notice of such changes, either by prominent notice on www.Fast Fleet Cabs.com or to your email address of record.
 <br/><br/>
 <h5>Security:</h5>
 We are committed to ensuring that your information is secure. In order to prevent unauthorized access or disclosure we have put in place suitable physical, electronic and managerial procedures to safeguard and secure the information we collect online..
 <br/><br/>
-If you have questions about this Privacy and Cookie Policy, please contact us at contact@trilokicabs.com
+If you have questions about this Privacy and Cookie Policy, please contact us at contact@fastfleetcabs.com
 <br/><br/>
 <h5>
 How we use cookies:</h5>
@@ -101,10 +101,10 @@ You can choose to accept or decline cookies. Most web browsers automatically acc
 Contacting Us:</h5>
 If there are any questions regarding this privacy policy you may contact us using the information below:
 <br/>
-Company Name: Triloki Cabs Pvt. Ltd<br/>
+Company Name: Fast Fleet Cabs Pvt. Ltd<br/>
 Address: L. I.C. 77, Chitragupt Nagar Kankarbagh Patna -800020<br/>
 Telephone No. : +91- 829 4202 824,+91-620 5198 331<br/>
-E-Mail ID: contact@trilokicabs.com<br/>
+E-Mail ID: contact@fastfleetcabs.com<br/>
 <br/><br/>
 <h5>
 Referral Scheme T&C:-</h5>
@@ -115,9 +115,9 @@ Referral Scheme T&C:-</h5>
 <br/>4. When you sign-up with a referral code, you earn a first ride coupon. The coupon will expire if not applied on the first ride.
 <br/>5. When your friend signs up with your code and takes the first ride, you earn a free ride coupon, which can be applied on any ride before the coupon expires.
 <br/>6. If your bill amount is less than your coupon amount, your free ride coupon will be fully used.
-<br/>7. Triloki Cabs reserves the right to revoke the free ride coupons or suspend your account at any time if we feel that the account is being misused or that our referral program is being violated.
-<br/>8. No refund, either in the form of coupons or Triloki Cabs Money, will be issued for free ride coupons.
-<br/>9. Triloki Cabs reserves the right to change the referral scheme at any time.
+<br/>7. Fast Fleet Cabs reserves the right to revoke the free ride coupons or suspend your account at any time if we feel that the account is being misused or that our referral program is being violated.
+<br/>8. No refund, either in the form of coupons or Fast Fleet Cabs Money, will be issued for free ride coupons.
+<br/>9. Fast Fleet Cabs reserves the right to change the referral scheme at any time.
 <br/>10. Multiple accounts with your email address, fake email IDs, manipulated devices, usage of fake locations , jail broken devices or an equivalent of that is a violation of our policy and can render your account invalid for any referral, promotional scheme or usage of our service.
 
 

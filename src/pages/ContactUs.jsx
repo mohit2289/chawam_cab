@@ -58,12 +58,12 @@ const ContactUs = () => {
             <div class="card bg-light mb-3">
                 <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-home"></i> Address</div>
                 <div class="card-body">
-                <p>Triloki Travels </p>
-                    <p>L. I.C. 77, Chitragupt Nagar Kankarbagh </p>
-                    <p>Patna -800020</p>
-                    <p>Bihar</p>
-                    <p>Email : contact@trilokicabs.com</p>
-                    <p>Tel. +91 829 4202 824, 620 5198 331</p>
+                <p>Fast Fleet Cabs </p>
+                    <p>34GF, Ground Floor, Housing Board Colony, Sector 33,  </p>
+                    <p>Gurgaon Haryana 122105</p>
+                    <p>India</p>
+                    <p>Email : contact@fastfleetcabs.com</p>
+                    <p>Tel. +91 +91 98139 33404</p>
 
                 </div>
 

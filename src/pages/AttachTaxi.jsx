@@ -115,7 +115,7 @@ const AttachTaxi = () => {
                         <div className="tab-pane fade show active" id="pills-booking" role="tabpanel" aria-labelledby="pills-booking-tab">
                             <div className="booking-details attach-taxi">
                                 <div className="booking-title">
-                                    <h3>Attach Your Taxi with Triloki Cabs</h3>
+                                    <h3>Attach Your Taxi with Fast Fleet Cabs</h3>
                                 </div>
 
                                 <div className="booking-form">

@@ -16,9 +16,9 @@ const Footer = () => {
                                         <div className="footer-widget footer-menu">
                                             <h5 className="footer-title">About Company</h5>
                                             <p className="justify">
-                                                Welcome to Triloki Cabs, your premier choice for reliable and comfortable transportation services.
+                                                Welcome to Fast Fleet Cabs, your premier choice for reliable and comfortable transportation services.
                                                 We take pride in providing exceptional taxi services that prioritize safety, convenience, and customer
-                                                satisfaction. At Triloki Cabs, we understand the importance of a trustworthy and efficient transportation solution.
+                                                satisfaction. At Fast Fleet Cabs, we understand the importance of a trustworthy and efficient transportation solution.
                                                 Whether you need a ride to the airport, a business meeting, or a leisurely outing, our professional drivers are
                                                 dedicated to delivering a seamless and enjoyable ...<Link  to={"/AboutUs"} >Read More</Link>
                                             </p>
@@ -65,18 +65,18 @@ const Footer = () => {
                                         <div className="footer-address">
                                             <span><i className="feather-phone-call"></i></span>
                                             <div className="addr-info">
-                                                <a href="tel:+1(888)7601940">+91 829 4202 824, 620 5198 331</a>
+                                                <a href="tel:+1(888)7601940">+91 +91 98139 33404</a>
                                             </div>
                                         </div>
                                         <div className="footer-address">
                                             <span><i className="feather-mail"></i></span>
                                             <div className="addr-info">
-                                                <a href="#">contact@trilokicabs.com/</a>
+                                                <a href="#">contact@fastfeetcabs.com/</a>
                                             </div>
                                         </div>
                                         <div className="update-form footer-address">
                                             <div className="addr-info">
-                                                L. I.C. 77, Chitragupt Nagar Kankarbagh Patna -800020
+                                            34GF, Ground Floor, Housing Board Colony, Sector 33, Gurgaon Haryana 122105
                                             </div>
                                         </div>
                                     </div>
@@ -114,7 +114,7 @@ const Footer = () => {
                             <div className="row align-items-center">
                                 <div className="col-md-6">
                                     <div className="copyright-text">
-                                        <p>© 2023 Trilokicabs.com. All Rights Reserved.</p>
+                                        <p>© 2024 fastfeetcabs.com. All Rights Reserved.</p>
                                     </div>
                                 </div>
                                 <div className="col-md-6">

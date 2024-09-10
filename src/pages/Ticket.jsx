@@ -178,7 +178,7 @@ const Ticket = () => {
                                 </div>
                                 <div>
 
-                                    Triloki Cabs Transparency :
+                                    Fast Fleet Cabs Transparency :
                                     <ol className=" list-group-numbered">
                                         <li className="list-group-item">EXCLUDES: TOLL TAX, STATE TAX, NIGHT CHARGES & DRIVER ALLOWANCE</li>
                                         <li className="list-group-item">EXCLUDES: PARKING (IF ANY), AIRPORT CHARGES (IF ANY)</li>

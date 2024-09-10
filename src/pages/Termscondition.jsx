@@ -29,7 +29,7 @@ const Termscondition = () => {
                                 </div>
 
                               <div>
-                              Triloki Cabs Transparency :<br></br>
+                              Fast Fleet Cabs Transparency :<br></br>
 1.	EXCLUDES: TOLL TAX, STATE TAX, NIGHT CHARGES & DRIVER ALLOWANCE<br></br>
 2.	EXCLUDES: PARKING (IF ANY), AIRPORT CHARGES (IF ANY)<br></br><br></br>
 Note :<br></br>

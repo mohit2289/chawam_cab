@@ -1,87 +1,212 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React,{useEffect,useState} from "react";
 import Button from '@mui/material/Button';
-
-const SignUp = () =>{
-return(
-<>
-  
-<div className="modal modal-content" style={{width: '35%', margin: '40px auto', zIndex: '9', textAlign: 'center'}}>
-  <div className="modal-body">
-  <div className="payment-success">
-   
-  <div className="login-wrapper">
-    <div className="loginbox">
-    <div className="login-auth">
-    <div className="login-auth-wrap">
-    <h1>Sign Up</h1>
-    <p className="account-subtitle">We'll send a confirmation code to your email.</p>
-    <form action="#">
-    <div className="form-group">
-    <label className="form-label">User Name <span className="text-danger">*</span></label>
-    <input type="email" className="form-control" placeholder/>
-    </div>
-    <div className="form-group">
-    <label className="form-label">Email <span className="text-danger">*</span></label>
-    <input type="email" className="form-control" placeholder/>
-    </div>
-    <div className="form-group">
-    <label className="form-label">Password <span className="text-danger">*</span></label>
-    <div className="pass-group">
-    <input type="password" className="form-control pass-input" placeholder/>
-    <span className="fas fa-eye toggle-password"></span>
-    </div>
-    </div>
-    <div className="form-group">
-    <label className="form-label">Confirm Password <span className="text-danger">*</span></label>
-    <div className="pass-group">
-    <input type="password" className="form-control pass-input" placeholder/>
-    <span className="fas fa-eye toggle-password"></span>
-    </div>
-    </div>
-    <div className="form-group m-0">
-      <label className="custom_check d-inline-flex"><span>Remember me</span>
-      <input type="checkbox" name="remeber"/>
-      <span className="checkmark"></span>
-      </label>
-      </div>
-
-    <div className="form-group">
-    
-    </div>
-       {/* <button className="btn btn-outline-light w-100 btn-size mt-1">Sign In </button> */}
-       <Button variant="outlined">Sign Up </Button>
-
-   
-    <div className="login-or" style={{paddingBottom: '20px'}}>
-<span className="or-line"></span>
-<span className="span-or">Or, Create an account with your email</span>
-</div>
-    
-    <div className="social-login" >
-    <a href="#" className="d-flex align-items-center justify-content-center form-group btn google-login w-100"><span>
-        <img src="assets/img/icons/google.svg" className="img-fluid" alt="Google"/></span>Log in with Google</a>
-    </div>
-    <div className="social-login">
-    <a href="#" className="d-flex align-items-center justify-content-center form-group btn google-login w-100"><span>
-        <img src="assets/img/icons/facebook.svg" className="img-fluid" alt="Facebook"/></span>Log in with Facebook</a>
-    </div>
-    
-    <div className="text-center dont-have">Already have an Account? <Link to="/Login">Sign In</Link></div>
-    </form>
-    </div>
-    </div>
-    </div>
-    </div>
-  
-  </div>
-  </div>
-  </div>
+import Avatar from '@mui/material/Avatar';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useNavigate, Link, useLocation } from "react-router-dom";
+import {signupService} from '../services/auth/index';
+const defaultTheme = createTheme();
 
 
+export default function SignUp()  {
+  const navigate = useNavigate();
+  let location = useLocation();
 
-</>
-)
+  const [success, setSuccess] = useState('');
+  const [errors, setErrors] = useState({});
+  const [signupForm, setSignupForm] = useState({
+    'username':"",
+    'email': '',
+    'mobile':'',
+    'password': '',
+    "confirmpass":""
+})
+
+const validateForm = () => {
+  let isValid = true;
+  const newErrors = {};
+
+  if (signupForm.username == '') {
+    newErrors.username = "Please enter username";
+    isValid = false;
+  }
+  if (signupForm.email == '') {
+      newErrors.email = "Please enter email";
+      isValid = false;
+  }
+  if (signupForm.mobile == '') {
+    newErrors.mobile = "Please enter mobile";
+    isValid = false;
 }
 
-export default SignUp;
+  if (signupForm.password == '') {
+    newErrors.password = "Please enter password";
+    isValid = false;
+  }
+  if (signupForm.confirmpass == '') {
+    newErrors.confirmpass = "Please enter confirm password";
+    isValid = false;
+  }
+
+  if (signupForm.password != signupForm.confirmpass) {
+    newErrors.confirmpass = "Password should be same";
+    isValid = false;
+  }
+
+  setErrors(newErrors);
+  return isValid;
+}
+
+  const handlerChange = (evt) => {
+    const value = evt.target.value;
+    setSignupForm({
+        ...signupForm,
+        [evt.target.name]: value
+    });
+};
+
+
+  const handleSubmit = async() => {
+    if(validateForm()){
+      let postData= {};
+      postData.username = signupForm.username;
+      postData.email = signupForm.email;
+      postData.mobile = signupForm.mobile;
+      postData.password = signupForm.password;
+      const resp = await signupService(postData);
+      if(resp){
+          setSuccess('User registeration successfully');
+          navigate('/');
+          window.location.reload();
+      }
+    }
+  }
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 5,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            //border: '1px solid grey',
+            //padding: '24px 24px 24px 24px'
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign up
+          </Typography>
+          <Box component="form" noValidate sx={{ mt: 3 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} >
+                <TextField
+                  autoComplete="given-name"
+                  name="username"
+                  required
+                  fullWidth
+                  id="firstName"
+                  label="UserName"
+                  autoFocus
+                  onChange={(e) => {
+                    handlerChange(e)
+                  }}
+                />
+                {errors.username && <div style={{color:'red'}}>{errors.username}</div>}
+
+              </Grid>
+             
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="mobile"
+                  label="Mobile"
+                  name="mobile"
+                  onChange={(e) => {
+                    handlerChange(e)
+                  }}
+                />
+                 {errors.mobile && <div style={{color:'red'}}>{errors.mobile}</div>}
+              </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  id="email"
+                  label="Email Address"
+                  name="email"
+                  autoComplete="email"
+                  onChange={(e) => {
+                    handlerChange(e)
+                  }}
+                />
+                 {errors.email && <div style={{color:'red'}}>{errors.email}</div>}
+              </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="new-password"
+                  onChange={(e) => {
+                    handlerChange(e)
+                  }}
+                />
+                 {errors.password && <div style={{color:'red'}}>{errors.password}</div>}
+              </Grid>
+              
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="confirmpass"
+                  label="Confirm Password"
+                  type="password"
+                  id="password"
+                  autoComplete="new-password"
+                  onChange={(e) => {
+                    handlerChange(e)
+                  }}
+                />
+                {errors.confirmpass && <div style={{color:'red'}}>{errors.confirmpass}</div>}
+              </Grid>
+
+            </Grid>
+            <Button
+              fullWidth
+              variant="contained"
+              onClick={handleSubmit}
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Sign Up
+            </Button>
+            <Grid container justifyContent="flex-end">
+              <Grid item>
+                <div variant="body2">
+                  Already have an account? <Link to="/Login">Sign In</Link>
+                </div>
+              </Grid>
+            </Grid>
+          </Box>
+
+        </Box>
+      </Container>
+    </ThemeProvider>
+  )
+}
