@@ -16,6 +16,8 @@ const PointToPointForm = (props) => {
     const [dropCityList, setDropCityList] = useState([]);
     const [searchFare, setSearchFare] = useState([]);
     const [errors, setErrors] = useState({});
+    const userloginData = JSON.parse(localStorage.getItem('userlogin'));
+
     const [data, setData] = useState({
         'pickup_city': "",
         'pickup_city_name': "",
@@ -24,8 +26,8 @@ const PointToPointForm = (props) => {
         'drop_city_name': "",
         'pickup_date': '',
         'pickup_time': '',
-        'username': "",
-        'mobile': '',
+        'username': (userloginData)?userloginData.username:'',
+        'mobile': (userloginData)?userloginData.mobile:'',
         'master_packge_id': props.masterPackageId
   });
 
@@ -176,6 +178,7 @@ const onSummit = async () => {
                                                       <input type="text" className="form-control"
                                                             name="username"
                                                             placeholder="Enter Name"
+                                                            value={data.username}
                                                             onChange={(e) => {
                                                                   handlerChange(e)
                                                             }} />
@@ -187,6 +190,7 @@ const onSummit = async () => {
                                                       <input type="text" className="form-control"
                                                             name="mobile"
                                                             placeholder="Enter Mobile"
+                                                            value={data.mobile}
                                                             onChange={(e) => {
                                                                   handlerChange(e)
                                                             }} />

@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import { vehicleFareContext } from '../HomeComponents/LocalForm'
-import { ImportExport } from "@mui/icons-material";
+import ModalDialog from "../../pages/ModalDialog";
 import { useNavigate } from "react-router-dom";
 
 const Listing = (props) => {
@@ -8,7 +8,15 @@ const Listing = (props) => {
 
     const vehicleList = props.vehicleData;
     const searchFormData = props.searchFormData;
-    const booknow = (index) =>{
+    const [open, setOpen] = useState(false);
+    const userloginData = JSON.parse(localStorage.getItem('userlogin'));
+
+    const handleClose = () => {
+      setOpen(false);
+    };
+
+    
+    const booknow = (index) => {
         let selectedVehicleDetails;
         if(index){
           selectedVehicleDetails  = vehicleList.data[index];
@@ -29,7 +37,7 @@ const Listing = (props) => {
                                         </div>
 
                                     </div>
-                                    <div className="col-xl-8 col-lg-9 col-sm-12 col-12">
+                                    {/* <div className="col-xl-8 col-lg-9 col-sm-12 col-12">
                                         <div className="product-filter-group">
                                             <div className="sortbyset">
                                                 <span className="sortbytitle">Show: </span>
@@ -61,7 +69,7 @@ const Listing = (props) => {
 
                                         </div>
 
-                                    </div>
+                                    </div> */ }
                                 </div>
                             </div>
                         </div>
@@ -101,11 +109,11 @@ const Listing = (props) => {
                                                 <div className="col-sm-3"><ul>
                                                     <li>
                                                         <span><i className="fa fa-user"></i></span>
-                                                        <p> 4+1</p>
+                                                        <p>&nbsp;{item.seating_capacity} + 1 </p>
                                                     </li>
                                                     <li>
                                                         <span><i className="fa fa-briefcase"></i></span>
-                                                        <p>4</p>
+                                                        <p>&nbsp; {item.luggage}</p>
                                                     </li>
 
                                                     <li>
@@ -117,9 +125,15 @@ const Listing = (props) => {
 
                                                 </ul></div>
                                                 <div className="col-sm-6"></div>
+                                                {userloginData && 
                                                 <div className="listing-button col-md-3 float-end" style={{ float: 'right' }}>
                                                     <button type="submit" className="btn btn-order" onClick={()=>{booknow(`${index}`)}}><span><i className="feather-calendar me-2"></i></span>Book Now</button>
                                                 </div>
+                                                }
+
+                                                {!userloginData && 
+                                                    <ModalDialog open={open} handleClose={handleClose} />
+                                                } 
 
                                             </div>
 

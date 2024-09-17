@@ -1,7 +1,23 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {useEffect,useState} from "react";
+import Button from '@mui/material/Button';
+import { Link,useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const [userlogin, setUserlogin] = useState([]);
+
+  const logout = async() => {
+    localStorage.removeItem('userlogin');
+    navigate('/');
+    window.location.reload();
+}
+
+  useEffect(() => {
+    const useremail = JSON.parse(localStorage.getItem('userlogin'));
+    if (userlogin) {
+      setUserlogin(useremail);
+    }
+  }, []);
   return (
     <>
       <header className="header">
@@ -43,11 +59,18 @@ const Header = () => {
                 <Link className="nav-link header-reg" to="/attach-taxi"><span><i className="fa-solid fa-taxi"></i></span>Attach Taxi</Link>
                 {/* <a  href="/attach-taxi">Attach Taxi</a> */}
               </li>
+              {!userlogin && 
               <li className="nav-item">
               <Link className="nav-link header-reg1" to="/Login"><span><i className="fa-regular fa-user"></i></span>Sign In</Link>
                 {/* <a className="nav-link header-login " href="/Login" data-bs-toggle="modal" data-bs-target="#pages_edit"><span><i className="fa-regular fa-user"></i></span>Sign In</a> */}
-
               </li>
+              }
+
+              {userlogin && 
+              <li className="nav-item">
+              <Button varient="contained" color='error' onClick={logout} ><span><i className="fa-regular fa-user"></i></span>Logout</Button>
+              </li>
+              }
 
             </ul>
           </nav>

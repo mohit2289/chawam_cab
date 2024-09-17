@@ -16,6 +16,8 @@ const OutstationForm = (props) => {
     const [dropCityList, setDropCityList] = useState([]);
     const [searchFare, setSearchFare] = useState([]);
     const [errors, setErrors] = useState({});
+    const userloginData = JSON.parse(localStorage.getItem('userlogin'));
+
     const [data, setData] = useState({
         'pickup_city': "",
         'pickup_city_name': "",
@@ -26,8 +28,8 @@ const OutstationForm = (props) => {
         'pickup_time': '',
         'return_date': '',
         'return_time': '',
-        'username': "",
-        'mobile': '',
+        'username': (userloginData)?userloginData.username:'',
+        'mobile': (userloginData)?userloginData.mobile:'',
         'master_packge_id': props.masterPackageId
   });
 
@@ -172,13 +174,16 @@ const onSummit = async () => {
     const days =  await dateDiff(data.pickup_date,data.return_date);
     postData.days = days;
     if(validateForm()){
+        console.log('sfsafs');
         await addCabSearchData(data);
         const cityDistance = await getCityDistance({'from_city':data.pickup_city,'to_city':data.drop_city});
         if (cityDistance.data.length > 0) {
             const min_km = cityDistance.data[0]['distance'];
             postData.minimum_km = min_km;
+            postData.distance = min_km;
         }
         const result = await searchVehicle(postData);
+        console.log('result---',result);
         if (result.data.length > 0) {
             postData.city_name = result.data[0]['city_name'];
         }
@@ -201,6 +206,7 @@ const onSummit = async () => {
                                                       <input type="text" className="form-control"
                                                             name="username"
                                                             placeholder="Enter Name"
+                                                            value={data.username}
                                                             onChange={(e) => {
                                                                   handlerChange(e)
                                                             }} />
@@ -212,6 +218,7 @@ const onSummit = async () => {
                                                       <input type="text" className="form-control"
                                                             name="mobile"
                                                             placeholder="Enter Mobile"
+                                                            value={data.mobile}
                                                             onChange={(e) => {
                                                                   handlerChange(e)
                                                             }} />

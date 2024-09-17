@@ -9,6 +9,8 @@ const List = () => {
     const { state } = useLocation();
     const {vehicleresult, postdata} = state;
 
+    localStorage.setItem('vehicleresult',JSON.stringify(vehicleresult));
+    localStorage.setItem('postData',JSON.stringify(postdata));
     return (
 
         <>

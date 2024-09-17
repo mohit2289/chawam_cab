@@ -1,7 +1,7 @@
 //import logo from './logo.svg';
 //import './App.css';
 import React , { Component }  from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 
 import Home from "./pages/home";
 import Cablisting from "./pages/Cablisting";
@@ -27,6 +27,7 @@ import Footer from "./components/Footer";
 import Aboutus from "./components/aboutus";
 
 function App() {
+  let location = useLocation();
   return (
     <div>
        <Header />
@@ -51,7 +52,7 @@ function App() {
             <Route  path="/aboutus" element={<Aboutus />}
         ></Route>
        </Routes>
-<Footer/>
+       {location.pathname != '/Login' && location.pathname  !=='/SignUp' && <Footer/>}
        
         {/* <Routes>
           <Route path="/cancellation" element={<Cancellation />} />
