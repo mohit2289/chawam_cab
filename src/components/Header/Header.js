@@ -1,4 +1,4 @@
-import React, {useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import Button from '@mui/material/Button';
 import { Link, useNavigate } from "react-router-dom";
 import AppBar from '@mui/material/AppBar';
@@ -14,18 +14,36 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Badge from '@mui/material/Badge';
-import MailIcon from '@mui/icons-material/Mail';
 import MoreIcon from '@mui/icons-material/MoreVert';
-
-const pages = ['Home', 'About Us', 'Contact'];
-const settings = ['Profile', 'My Booking', 'Logout'];
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import MailIcon from '@mui/icons-material/Mail';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 
 const Header = () => {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
-  
-  const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    // setMobileMoreAnchorEl(event.currentTarget);
+  const isMenuOpen = Boolean(anchorEl);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const handleProfileMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
   };
+
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+    handleMobileMenuClose();
+  };
+
+  const handleMobileMenuOpen = (event) => {
+    setMobileMoreAnchorEl(event.currentTarget);
+  };
+
+
   const mobileMenuId = 'primary-search-account-menu-mobile';
 
   const navigate = useNavigate();
@@ -51,11 +69,11 @@ const Header = () => {
     setAnchorElUser(null);
   };
 
-  const logout = async() => {
+  const logout = async () => {
     localStorage.removeItem('userlogin');
     window.location.reload();
     navigate('/');
-}
+  }
 
   useEffect(() => {
     const useremail = JSON.parse(localStorage.getItem('userlogin'));
@@ -64,6 +82,57 @@ const Header = () => {
     }
   }, []);
 
+    const renderMobileMenu = (
+    <Menu
+      anchorEl={mobileMoreAnchorEl}
+      color ={'red'}
+      anchorOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+    >
+      <MenuItem>
+        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+          <Badge badgeContent={4} color="error">
+            <MailIcon />
+          </Badge>
+        </IconButton>
+        <p>Messages</p>
+      </MenuItem>
+      <MenuItem>
+        <IconButton
+          size="large"
+          aria-label="show 17 new notifications"
+          color="inherit"
+        >
+          <Badge badgeContent={17} color="error">
+            <NotificationsIcon />
+          </Badge>
+        </IconButton>
+        <p>Notifications</p>
+      </MenuItem>
+      <MenuItem onClick={handleProfileMenuOpen}>
+        <IconButton
+          size="large"
+          aria-label="account of current user"
+          aria-controls="primary-search-account-menu"
+          aria-haspopup="true"
+          color="inherit"
+        >
+          <AccountCircle />
+        </IconButton>
+        <p>Profile</p>
+      </MenuItem>
+    </Menu>
+  );
   return (
     <AppBar position="static" className="header" sx={{ bgcolor: "white" }}>
       <Container maxWidth="xl">
@@ -83,12 +152,12 @@ const Header = () => {
               textDecoration: 'none',
             }}
           >
-             <a href="/" className="navbar-brand logo">
-                <img src="assets/img/Fastfleet_cabs_logo.png" className="img-fluid" alt="Logo" />
+            <a href="/" className="navbar-brand logo">
+              <img src="assets/img/Fastfleet_cabs_logo.png" className="img-fluid" alt="Logo" />
             </a>
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' },textAlign: 'center' }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, textAlign: 'center' }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -110,42 +179,42 @@ const Header = () => {
               transformOrigin={{
                 vertical: 'top',
                 horizontal: 'left',
-                
+
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: 'block', md: 'none' },
-                }}
+              }}
             >
               {/* {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu} >
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))} */}
-                <MenuItem key={"Home"} onClick={handleCloseNavMenu} >
-                  <Typography textAlign="center">
-                    <Link to="/" underline="none" style={{ textAlign: 'center', color:'black', textDecoration:'none' }}>
+              <MenuItem key={"Home"} onClick={handleCloseNavMenu} >
+                <Typography textAlign="center">
+                  <Link to="/" underline="none" style={{ textAlign: 'center', color: 'black', textDecoration: 'none' }}>
                     {"Home"}
-                </Link></Typography>
-                </MenuItem>
-                <MenuItem key={"About Us"} onClick={handleCloseNavMenu} >
-                  <Typography textAlign="center">
-                    <Link to="/aboutus" underline="none" style={{ textAlign: 'center', color:'black', textDecoration:'none' }}>
+                  </Link></Typography>
+              </MenuItem>
+              <MenuItem key={"About Us"} onClick={handleCloseNavMenu} >
+                <Typography textAlign="center">
+                  <Link to="/aboutus" underline="none" style={{ textAlign: 'center', color: 'black', textDecoration: 'none' }}>
                     {"About Us"}
-                </Link></Typography>
-                </MenuItem>
-                <MenuItem key={"Contact Us"} onClick={handleCloseNavMenu} >
-                  <Typography textAlign="center">
-                    <Link to="/ContactUs" underline="none" style={{ textAlign: 'center', color:'black', textDecoration:'none' }}>
+                  </Link></Typography>
+              </MenuItem>
+              <MenuItem key={"Contact Us"} onClick={handleCloseNavMenu} >
+                <Typography textAlign="center">
+                  <Link to="/ContactUs" underline="none" style={{ textAlign: 'center', color: 'black', textDecoration: 'none' }}>
                     {"Contact Us"}
-                </Link></Typography>
-                </MenuItem>
+                  </Link></Typography>
+              </MenuItem>
 
 
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' ,}, mr: 1 }} />
+          <AdbIcon sx={{ display: { xs: 'flex', md: 'none', }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -162,22 +231,15 @@ const Header = () => {
               textDecoration: 'none',
             }}
           >
-               <a href="/" className="navbar-brand logo-small">
-                <img src="assets/img/logo-small.png" className="img-fluid" alt="Logo" />
-              </a>
-                         
+            <a href="/" className="navbar-brand logo-small">
+              <img src="assets/img/logo-small.png" className="img-fluid" alt="Logo" />
+            </a>
+
           </Typography>
 
-          <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-          
-      <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+
+
+          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="show more"
@@ -189,8 +251,8 @@ const Header = () => {
               <MoreIcon />
             </IconButton>
           </Box>
-          
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, textAlign: 'center', paddingLeft:'200px;' }}>
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, textAlign: 'center', paddingLeft: '200px;' }}>
             {/* {pages.map((page) => (
               <Button
                 key={page}
@@ -201,117 +263,117 @@ const Header = () => {
               </Button>
             ))} */}
 
-                <Button key={"Home"}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block', lineHeight:'50px', textDecoration:'none' }}>
-                <Typography sx={{ textAlign: 'center'}}>
-                    <Link to="/" underline="none" style={{ textAlign: 'center', color:'black', textDecoration:'none' }}>
-                    {"Home"}
+            <Button key={"Home"}
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: 'black', display: 'block', lineHeight: '50px', textDecoration: 'none' }}>
+              <Typography sx={{ textAlign: 'center' }}>
+                <Link to="/" underline="none" style={{ textAlign: 'center', color: 'black', textDecoration: 'none' }}>
+                  {"Home"}
                 </Link></Typography>
-                </Button>
+            </Button>
 
-                <Button key={"About Us"}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block', lineHeight:'50px' }}>
-                <Typography sx={{ textAlign: 'center' }}>
-                    <Link to="/aboutus" underline="none" style={{ textAlign: 'center', color:'black', textDecoration:'none' }}>
-                    {"About Us"}
+            <Button key={"About Us"}
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: 'black', display: 'block', lineHeight: '50px' }}>
+              <Typography sx={{ textAlign: 'center' }}>
+                <Link to="/aboutus" underline="none" style={{ textAlign: 'center', color: 'black', textDecoration: 'none' }}>
+                  {"About Us"}
                 </Link></Typography>
-                </Button>
+            </Button>
 
-                <Button key={"Contact Us"}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block', lineHeight:'50px' }}>
-                <Typography sx={{ textAlign: 'center' }}>
-                    <Link to="/ContactUs" underline="none" style={{ textAlign: 'center', color:'black', textDecoration:'none' }}>
-                    {"Contact Us"}
+            <Button key={"Contact Us"}
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: 'black', display: 'block', lineHeight: '50px' }}>
+              <Typography sx={{ textAlign: 'center' }}>
+                <Link to="/ContactUs" underline="none" style={{ textAlign: 'center', color: 'black', textDecoration: 'none' }}>
+                  {"Contact Us"}
                 </Link></Typography>
-                </Button>        
+            </Button>
           </Box>
 
 
           <Box className="socal-link call-m">
-          <span className="whatsapp-m"> <a target="_blank" href="https://api.whatsapp.com/send?phone=8294202824"> <img src="assets/img/icons8-whatsapp-48.png" className="img-fluid" alt="Logo" /> </a></span>
-          <span className="call-m"> <a target="_blank" href="tel:9813933404"> <img src="assets/img/icons8-telephone-64.png" className="img-fluid" alt="Logo" /><span className="contact-num"> <strong>+91 98139 33404</strong> </span></a></span>
+            <span className="whatsapp-m"> <a target="_blank" href="https://api.whatsapp.com/send?phone=8294202824"> <img src="assets/img/icons8-whatsapp-48.png" className="img-fluid" alt="Logo" /> </a></span>
+            <span className="call-m"> <a target="_blank" href="tel:9813933404"> <img src="assets/img/icons8-telephone-64.png" className="img-fluid" alt="Logo" /><span className="contact-num"> <strong>+91 98139 33404</strong> </span></a></span>
           </Box>
-          
+
 
           <Box>
-         
 
-          <ul className="nav header-navbar-rht">
+
+            <ul className="nav header-navbar-rht">
               <li className="nav-item">
                 <Link className="nav-link header-reg" to="/attach-taxi"><span><i className="fa-solid fa-taxi"></i></span>Attach Taxi</Link>
                 {/* <a  href="/attach-taxi">Attach Taxi</a> */}
               </li>
-              {!userlogin && 
-              <li className="nav-item">
-              <Link className="nav-link header-reg" to="/Login"><span><i className="fa-regular fa-user"></i></span>Sign In</Link>
-                {/* <a className="nav-link header-login " href="/Login" data-bs-toggle="modal" data-bs-target="#pages_edit"><span><i className="fa-regular fa-user"></i></span>Sign In</a> */}
+              {!userlogin &&
+                <li className="nav-item">
+                  <Link className="nav-link header-reg" to="/Login"><span><i className="fa-regular fa-user"></i></span>Sign In</Link>
+                  {/* <a className="nav-link header-login " href="/Login" data-bs-toggle="modal" data-bs-target="#pages_edit"><span><i className="fa-regular fa-user"></i></span>Sign In</a> */}
 
-              </li>
+                </li>
               }
 
-              {userlogin && 
-              <li className="nav-item">
-              <Button varient="contained" color='error' onClick={logout} ><span><i className="fa-regular fa-user"></i></span>Logout</Button>
-              </li>
+              {userlogin &&
+                <li className="nav-item">
+                  <Button varient="contained" color='error' onClick={logout} ><span><i className="fa-regular fa-user"></i></span>Logout</Button>
+                </li>
               }
 
             </ul>
-            </Box>
-          {userlogin && 
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="User" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {/* {settings.map((setting) => (
+          </Box>
+          {userlogin &&
+            <Box sx={{ flexGrow: 0 }}>
+              <Tooltip title="Open settings">
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <Avatar alt="User" src="/static/images/avatar/2.jpg" />
+                </IconButton>
+              </Tooltip>
+              <Menu
+                sx={{ mt: '45px' }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+              >
+                {/* {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
                 </MenuItem>
               ))} */}
                 <MenuItem key={"Profile"} onClick={handleCloseUserMenu}>
                   <Typography sx={{ textAlign: 'center' }}>
-                    <Link to="/" underline="none" style={{ textAlign: 'center', color:'black', textDecoration:'none' }}>
-                    {"Profile"}
-  </Link></Typography>
+                    <Link to="/" underline="none" style={{ textAlign: 'center', color: 'black', textDecoration: 'none' }}>
+                      {"Profile"}
+                    </Link></Typography>
                 </MenuItem>
 
                 <MenuItem key={"My Booking"} onClick={handleCloseUserMenu}>
                   <Typography sx={{ textAlign: 'center' }}>
-                    <Link to="/" underline="none" style={{ textAlign: 'center', color:'black', textDecoration:'none' }}>
-                    {"My Booking"}
-  </Link></Typography>
+                    <Link to="/" underline="none" style={{ textAlign: 'center', color: 'black', textDecoration: 'none' }}>
+                      {"My Booking"}
+                    </Link></Typography>
                 </MenuItem>
                 <MenuItem key={"Logout"} onClick={handleCloseUserMenu}>
                   <Typography sx={{ textAlign: 'center' }}>
-                    <Link to="#" underline="none" onClick={logout} style={{ textAlign: 'center', color:'black', textDecoration:'none' }}>
-                    {"Logout"}
-  </Link></Typography>
+                    <Link to="#" underline="none" onClick={logout} style={{ textAlign: 'center', color: 'black', textDecoration: 'none' }}>
+                      {"Logout"}
+                    </Link></Typography>
                 </MenuItem>
 
-               </Menu>
+              </Menu>
 
 
-            {/* <Menu
+              {/* <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
               anchorEl={anchorElUser}
@@ -328,10 +390,11 @@ const Header = () => {
               onClose={handleCloseUserMenu}
             >
             </Menu> */}
-          </Box>
+            </Box>
           }
         </Toolbar>
       </Container>
+      {renderMobileMenu}
     </AppBar>
   )
 }
