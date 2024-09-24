@@ -49,7 +49,7 @@ const Ticket = () => {
                                     <div className="row">
                                         <div className="col-md-6">
                                             <div className="invoice-logo">
-                                                <img src="assets/img/logo.svg" alt="logo" />
+                                                <img src="assets/img/Fastfleet_cabs_logo.png" alt="logo" />
                                             </div>
                                         </div>
                                         <div className="col-md-6">
@@ -80,11 +80,11 @@ const Ticket = () => {
                                         <li>
                                             <div className="invoice-info">                                               
                                                 <p>
-                                                    Triloki Travels<br />
-                                                    L. I.C. 77, Chitragupt Nagar <br />
-                                                    Kankarbagh Patna -800020<br />
-                                                    6205198331<br />
-                                                    trilokicabs@gmail.com<br />
+                                                    Fast Fleet Cabs<br />
+                                                    34GF, Ground Floor, Housing Board Colony, Sector 33, <br />
+                                                    Gurgaon Haryana 122105<br />
+                                                    +91 98139 33404<br />
+                                                    contact@fastfleetcabs.com<br />
                                                     www.trilokicabs.com
                                                 </p>
                                             </div>

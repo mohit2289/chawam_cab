@@ -61,7 +61,7 @@ const Home = () => {
                       Local Hire
                     </a>
                   </li>
-                   <li>
+                   {/* <li>
                     <a className={(selectModule=='2')? 'active' : ''} data-bs-toggle="tab" name='pointtopoint' 
                       onClick={(e) => {
                         handleClick(e,'2')
@@ -71,7 +71,7 @@ const Home = () => {
                       </span>
                       One Way
                     </a>
-                  </li>
+                  </li> */}
                   <li>
                     <a className={(selectModule=='4')? 'active' : ''} data-bs-toggle="tab" name='outstation' 
                       onClick={(e) => {
