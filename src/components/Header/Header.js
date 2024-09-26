@@ -101,36 +101,29 @@ const Header = () => {
     >
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
+          <i className="fa-solid fa-taxi"></i>
         </IconButton>
-        <p>Messages</p>
+        <Link className="nav-link header-reg" to="/attach-taxi"><span></span>Attach Taxi</Link>
+        
       </MenuItem>
+      {!userlogin &&
       <MenuItem>
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
           color="inherit"
         >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
+          
+          <i className="fa-regular fa-user"></i>
+         
         </IconButton>
-        <p>Notifications</p>
+        <p>
+          <Link className="nav-link header-reg1" to="/Login"><span></span>Sign In</Link>
+                  {/* <a className="nav-link header-login " href="/Login" data-bs-toggle="modal" data-bs-target="#pages_edit"><span><i className="fa-regular fa-user"></i></span>Sign In</a> */}
+             
+        </p>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
+      }
     </Menu>
   );
   return (
@@ -246,7 +239,7 @@ const Header = () => {
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
-              color="inherit"
+              color="black"
             >
               <MoreIcon />
             </IconButton>
@@ -308,24 +301,24 @@ const Header = () => {
               </li>
               {!userlogin &&
                 <li className="nav-item">
-                  <Link className="nav-link header-reg" to="/Login"><span><i className="fa-regular fa-user"></i></span>Sign In</Link>
+                  <Link className="nav-link header-reg1" to="/Login"><span><i className="fa-regular fa-user"></i></span>Sign In</Link>
                   {/* <a className="nav-link header-login " href="/Login" data-bs-toggle="modal" data-bs-target="#pages_edit"><span><i className="fa-regular fa-user"></i></span>Sign In</a> */}
 
                 </li>
               }
 
-              {userlogin &&
+              {/* {userlogin &&
                 <li className="nav-item">
                   <Button varient="contained" color='error' onClick={logout} ><span><i className="fa-regular fa-user"></i></span>Logout</Button>
                 </li>
-              }
+              } */}
 
             </ul>
           </Box>
           {userlogin &&
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, marginLeft:1 }}>
                   <Avatar alt="User" src="/static/images/avatar/2.jpg" />
                 </IconButton>
               </Tooltip>
